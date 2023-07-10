@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/87d7ac07ac.js" crossorigin="anonymous"></script>
+        
+  </head>
+  <body >
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12">
+              <div class="bg-container d-flex flex-row justify-content-center p-2">
+                  <h1 class="weather">Weather<span class="span_card"> Forecast</span></h1>
+                  <img src="https://emojis.wiki/emoji-pics/apple/sun-behind-rain-cloud-apple.png" class="sunimage" />
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="bg-container1">
+      <form onsubmit="event.preventDefault();">
+          <div class="d-flex flex-row justify-content-center">
+              <div class="container-fluid">
+                  <div class="row">
+                      <div class="col-4">
+                          <input type="text" class="enter-button ml-5" id="Search_Place" placeholder="Enter Place Name">
+                      </div>
+                      <div class="col-4">
+                          <p id="ErrorMsg"></p>
+                      </div>
+                      <div class="col-4">
+                          <button class="search-button mr-4" id="SearchButton">Search</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="column">
+                  <div class="flexing">
+                      <div class="CurrentWeather-Container">
+
+                          <div class="CurrentWeather">
+
+                              <div class="DateTime-Container">
+                                  <p id="Date">Date</p>
+                                  <p id="Time">Time</p>
+                              </div>
+                              <h3 id="Place_Name">Country Name</h3>
+                              <div class="Weather_Details">
+
+                                  <div class="Weather_Item" id="WeatherConditionBox">
+                                      <h5>Condition <i class="fa-solid fa-cloud"></i></h5>
+                                      <p id="Condition"> </p>
+                                      <div id="ConditionIcon"></div>
+                                  </div>
+
+                                  <div class="Weather_Item">
+                                      <h5>Temperature <i class="fa-solid fa-temperature-full"></i></h5>
+                                      <p> <span id="Temperature"></span>&deg;C</p>
+                                  </div>
+
+                                  <div class="Weather_Item">
+                                      <h5>Humidity <i class="fa-solid fa-fire-flame-simple"></i></h5>
+                                      <p><span id="Humidity"></span>&percnt;</p>
+                                  </div>
+
+                                  <div class="Weather_Item">
+                                      <h5>Wind Speed <i class="fa-solid fa-wind"></i></h5>
+                                      <p><span id="WindSpeed"></span> Km/h</p>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-7">
+                  <div class="WeatherForecast_Container">
+                      <div class="WeatherForeCast">
+
+                          <div class="ForeCastItem">
+                              <h5 id="Day1"></h5>
+                              <div class="ForeCastItem-Details">
+                                  <div id="Day1ConditionBox" class="ConditionBox"></div>
+                                  <p>Temperature<span id="Day1Temperature"></span></p>
+                                  <p>Humidity<span id="Day1Humidity"></span></p>
+                                  <p>Wind Speed<span id="Day1Wind"></span></p>
+                              </div>
+                          </div>
+
+                          <div class="ForeCastItem">
+                              <h5 id="Day2"></h5>
+                              <div class="ForeCastItem-Details">
+                                  <div id="Day2ConditionBox" class="ConditionBox"></div>
+                                  <p>Temperature<span id="Day2Temperature"></span></p>
+                                  <p>Humidity<span id="Day2Humidity"></span></p>
+                                  <p>Wind Speed<span id="Day2Wind"></span></p>
+                              </div>
+                          </div>
+
+                          <div class="ForeCastItem">
+                              <h5 id="Day3"></h5>
+                              <div class="ForeCastItem-Details">
+                                  <div id="Day3ConditionBox" class="ConditionBox"></div>
+                                  <p>Temperature<span id="Day3Temperature"></span></p>
+                                  <p>Humidity<span id="Day3Humidity"></span></p>
+                                  <p>Wind Speed<span id="Day3Wind"></span></p>
+                              </div>
+                          </div>
+
+                          <div class="ForeCastItem">
+                              <h5 id="Day4"></h5>
+                              <div class="ForeCastItem-Details">
+                                  <div id="Day4ConditionBox" class="ConditionBox"></div>
+                                  <p>Temperature<span id="Day4Temperature"></span></p>
+                                  <p>Humidity<span id="Day4Humidity"></span></p>
+                                  <p>Wind Speed<span id="Day4Wind"></span></p>
+                              </div>
+                          </div>
+                          <div class="ForeCastItem">
+                              <h5 id="Day5"></h5>
+                              <div class="ForeCastItem-Details">
+                                  <div id="Day5ConditionBox" class="ConditionBox"></div>
+                                  <p>Temperature<span id="Day5Temperature"></span></p>
+                                  <p>Humidity<span id="Day5Humidity"></span></p>
+                                  <p>Wind Speed<span id="Day5Wind"></span></p>
+                              </div>
+                          </div>
+                          <div class="ForeCastItem">
+                              <h5 id="Day6"></h5>
+                              <div class="ForeCastItem-Details">
+                                  <div id="Day6ConditionBox" class="ConditionBox"></div>
+                                  <p>Temperature<span id="Day6Temperature"></span></p>
+                                  <p>Humidity<span id="Day6Humidity"></span></p>
+                                  <p>Wind Speed<span id="Day6Wind"></span></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-container2 p-2 d-flex flex-row justify-content-center">
+                    <h1 class="footer_card pr-5">Designed and Developed by <span class="span_card">Anusha Kurra</span></h1>
+                    <a href="https://github.com/Anu-62anu" target="_blank" class="icon">
+                        <i class="p-2 icon fa-brands fa-github"></i>
+                    </a>
+                    <a href="http://www.linkedin.com/in/anusha-kurra" target="_blank" class="icon">
+                        <i class="p-2 icon fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
